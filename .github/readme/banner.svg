@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320" role="img" aria-label="Coach Companion: a phone companion for Euro Truck Simulator 2 coach jobs">
+  <title>Coach Companion for Euro Truck Simulator 2</title>
+  <style>
+    .eyebrow { font: 600 15px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #8e8e93; letter-spacing: 3.5px; }
+    .title   { font: 700 66px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #ffffff; letter-spacing: -1.5px; }
+    .tag     { font: 400 21px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #a1a1a6; }
+    .stop    { font: 500 13px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #6e6e73; }
+    .led     { font: 800 50px Consolas, 'Courier New', monospace; letter-spacing: 6px; }
+    .badge   { font: 800 20px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; fill: #000000; }
+  </style>
+  <defs>
+    <!-- dot-matrix destination sign, like the app's route header -->
+    <pattern id="ledOn" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.1" fill="#f2f2f2"/>
+    </pattern>
+    <pattern id="ledOff" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.6" fill="#1b1b1d"/>
+    </pattern>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="320" fill="#000000"/>
+
+  <!-- Text -->
+  <text x="80" y="118" class="eyebrow">EURO TRUCK SIMULATOR 2 · COACH JOBS</text>
+  <text x="76" y="190" class="title">Coach Companion</text>
+  <text x="80" y="232" class="tag">Your phone, the second screen for coach driving.</text>
+
+  <!-- Destination sign -->
+  <g transform="translate(700 62)">
+    <rect width="520" height="92" rx="14" fill="#0b0b0c" stroke="#1f1f22" stroke-width="1.5"/>
+    <rect x="10" y="10" width="500" height="72" rx="8" fill="url(#ledOff)"/>
+    <rect x="28" y="30" width="56" height="34" rx="7" fill="#ffffff"/>
+    <text x="56" y="54" text-anchor="middle" class="badge">B5</text>
+    <text x="112" y="65" class="led" fill="url(#ledOn)">KIEL</text>
+    <!-- leg counter follows the bus: n/5 from the moment it leaves stop n -->
+    <g text-anchor="end" class="led" fill="url(#ledOn)">
+      <text x="490" y="65" opacity="1">1/5<animate attributeName="opacity" dur="12s" repeatCount="indefinite" calcMode="discrete" values="1;0" keyTimes="0;0.24"/></text>
+      <text x="490" y="65" opacity="0">2/5<animate attributeName="opacity" dur="12s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.24;0.42"/></text>
+      <text x="490" y="65" opacity="0">3/5<animate attributeName="opacity" dur="12s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.42;0.6"/></text>
+      <text x="490" y="65" opacity="0">4/5<animate attributeName="opacity" dur="12s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.6;0.78"/></text>
+      <text x="490" y="65" opacity="0">5/5<animate attributeName="opacity" dur="12s" repeatCount="indefinite" calcMode="discrete" values="0;1" keyTimes="0;0.78"/></text>
+    </g>
+  </g>
+
+  <!-- Route: Rotterdam -> Kiel, the bus moves stop by stop -->
+  <g transform="translate(0 222)">
+    <line x1="724" y1="0" x2="1196" y2="0" stroke="#2c2c2e" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>
+    <line x1="724" y1="0" x2="1196" y2="0" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-dasharray="472 472" stroke-dashoffset="472">
+      <animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" calcMode="linear"
+        values="472;472;377.6;377.6;283.2;283.2;188.8;188.8;94.4;94.4;0;0;472"
+        keyTimes="0;0.06;0.16;0.24;0.34;0.42;0.52;0.6;0.7;0.78;0.88;0.97;1"/>
+    </line>
+
+    <g fill="#000000" stroke="#8e8e93" stroke-width="2.5">
+      <circle cx="724" cy="0" r="7"/>
+      <circle cx="818.4" cy="0" r="7"/>
+      <circle cx="912.8" cy="0" r="7"/>
+      <circle cx="1007.2" cy="0" r="7"/>
+      <circle cx="1101.6" cy="0" r="7"/>
+      <circle cx="1196" cy="0" r="7"/>
+    </g>
+
+    <g>
+      <circle r="22" fill="url(#glow)"/>
+      <circle r="8" fill="#ffffff"/>
+      <animateTransform attributeName="transform" type="translate" dur="12s" repeatCount="indefinite" calcMode="linear"
+        values="724 0;724 0;818.4 0;818.4 0;912.8 0;912.8 0;1007.2 0;1007.2 0;1101.6 0;1101.6 0;1196 0;1196 0;724 0"
+        keyTimes="0;0.06;0.16;0.24;0.34;0.42;0.52;0.6;0.7;0.78;0.88;0.97;1"/>
+    </g>
+
+    <g class="stop" text-anchor="middle">
+      <text x="724" y="34">Rotterdam</text>
+      <text x="818.4" y="34">Amsterdam</text>
+      <text x="912.8" y="34">Groningen</text>
+      <text x="1007.2" y="34">Bremen</text>
+      <text x="1101.6" y="34">Hamburg</text>
+      <text x="1196" y="34">Kiel</text>
+    </g>
+  </g>
+</svg>
